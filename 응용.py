@@ -14,7 +14,7 @@ from surprise import Reader, Dataset, SVD, evaluate
 
 import warnings; warnings.simplefilter('ignore')
 
-md = pd. read_csv('movies_metadata.csv')
+md = pd. read_csv('movies_metadata.csv')#데이터셋 불러
 md.head()
 
 md['genres'] = md['genres'].fillna('[]').apply(literal_eval).apply(lambda x: [i['name'] for i in x] if isinstance(x, list) else [])
